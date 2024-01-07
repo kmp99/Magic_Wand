@@ -1,4 +1,5 @@
 Project Overview:
+
 The Robust Magic Wand project aims to implement a versatile "Magic Wand" application capable of recognizing and classifying various wizard spells, charms, and curses. The magic wand utilizes an Arduino Nano 33 BLE Sense board with an Inertial Measurement Unit (IMU) for gesture recognition. The project comprises two main components: IMU Capture and Gesture Classification.
 
 Spells, Charms, and Curses:
@@ -9,7 +10,8 @@ Avada Kedavra: Causes instantaneous death.
 Locomotor Charm: Moves the target.
 Arresto Momentum Charm: Slows or stops a target's velocity.
 Revelio: Reveals hidden objects.
-Assumptions and Hints:
+
+Assumptions:
 Magic wand length: ~30 cm.
 Hold wand with Arduino board facing up.
 IMU sensor sampling rate: 119 Hz.
@@ -19,15 +21,18 @@ Consider useful data augmentations for improved model robustness.
 Experiment with different model architectures, considering Arduino limitations.
 Model training time on Colab should be under 3 minutes.
 Optimize the model's footprint through quantization and efficient layer usage.
+
 Robustness Challenges:
 Recognizing spells is akin to handwriting, each person having a unique style.
 IMU sensors may not be identical, posing a robustness challenge.
 Address robustness issues considering in-distribution and out-of-distribution generalization.
+
 Reproducibility and Robustness Measures:
 Share train and test datasets with Olga for validation.
 Two datasets: OLGA (collected by Olga) and CLASS (compiled from all participants).
 Ensure reproducibility by achieving consistent results.
 Evaluate model robustness through average accuracy on provided datasets.
+
 Efficiency Measures:
 Fix seeds for reproducibility.
 Code compatibility for both Colab (model training) and Arduino (model inference).
@@ -43,6 +48,8 @@ Project Hardware Requirements:
 Arduino Nano 33 BLE Sense board.
 USB Cable.
 Magic wand should be ~30 cm long.
+
+
 Project Software Requirements:
 Download the right version for your OS at Arduino Software.
 Run the Arduino IDE.
@@ -71,13 +78,15 @@ The hyperparameters of the TensorFlow Lite model are predefined and embedded in 
 
 Regularization and Dropout:
 Regularization and dropout are implemented in the model architecture to prevent overfitting:
-
 kernel_regularizer=tf.keras.regularizers.l2(0.01): L2 regularization on weights.
 tf.keras.layers.Dropout(0.5): Dropout applied to input.
+
+
 Project Limitations and Future Work:
 Assumes a predefined set of gestures, limiting adaptability.
 Real-world testing and validation needed for diverse environments.
 Model optimization for Arduino memory constraints can be explored.
 Continuous improvement through additional training and retraining is recommended.
+
 Conclusion:
 The Magic Wand Gesture Recognition project demonstrates the integration of Arduino, IMU sensor, and TensorFlow Lite for Microcontrollers to recognize gestures. The provided code serves as a foundation for further exploration, improvements, and adaptations to specific use cases.
